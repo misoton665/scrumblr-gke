@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: scrumblr-node
+  labels:
+    name: scrumblr-node
+spec:
+  template:
+    metadata:
+      labels:
+        name: scrumblr-node
+      spec:
+        containers:
+        - image: scrumblr
+          ports:
+          - containerPort: 8080

@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: redis-node
+  labels:
+    name: redis-node
+spec:
+  template:
+    metadata:
+      labels:
+        name: redis-node
+      spec:
+        containers:
+        - image: redis
+          ports:
+          - containerPort: 6379
