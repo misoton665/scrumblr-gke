@@ -9,8 +9,9 @@ spec:
     metadata:
       labels:
         name: scrumblr-node
-      spec:
-        containers:
-        - image: scrumblr
-          ports:
-          - containerPort: 8080
+    spec:
+      containers:
+      - image: gcr.io/helloworld-166413/scrumblr:v1.0
+        name: scrumblr-node
+        ports:
+        - containerPort: 8080

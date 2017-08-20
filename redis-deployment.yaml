@@ -5,12 +5,14 @@ metadata:
   labels:
     name: redis-node
 spec:
+  replicas: 3
   template:
     metadata:
       labels:
         name: redis-node
-      spec:
+    spec:
         containers:
-        - image: redis
+        - image: redis:3.2
+          name: redis-node
           ports:
           - containerPort: 6379
