@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: scrumblr-svc
+  name: scrumblr-service
   labels:
-    name: scrumblr-svc
+    name: scrumblr-service
 spec:
   ports:
   - protocol: TCP
     port: 80
     targetPort: 8080
   selector:
-    name: scrumblr-dep
+    name: scrumblr-node
   type: LoadBalancer
