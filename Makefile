@@ -10,6 +10,9 @@ docker-nginx:
 	docker tag scrumblr-nginx asia.gcr.io/${PROJECT_ID}/scrumblr-nginx:v1.0
 	gcloud docker -- push asia.gcr.io/${PROJECT_ID}/scrumblr-nginx:v1.0
 
+make-deployment-conf:
+	envsubst < scrumblr-dep-base.yaml > scrumblr-dep.yaml 
+
 update-deployment:
 	kubectl delete deployment scrumblr-dep
 	kubectl create -f scrumblr-dep.yaml
@@ -20,4 +23,4 @@ update-service:
 
 setup-all: docker-scrumblr docker-nginx update-deployment update-service
 
-.PHONY: docker-scrumblr docker-nginx update-deployment update-service
+.PHONY: docker-scrumblr docker-nginx make-deployment-conf update-deployment update-service
