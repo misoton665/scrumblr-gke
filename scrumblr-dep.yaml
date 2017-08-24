@@ -11,10 +11,14 @@ spec:
         name: scrumblr-dep
     spec:
       containers:
-      - image: asia.gcr.io/helloworld-166413/scrumblr:v1.0
+      - image: asia.gcr.io/helloworld/scrumblr:v1.0
         name: scrumblr-node
         ports:
         - containerPort: 8080
+      - image: asia.gcr.io/helloworld/scrumblr-nginx:v1.0
+        name: nginx-node
+        ports:
+        - containerPort: 80
       - image: redis:3.2
         name: redis-node
         ports:
