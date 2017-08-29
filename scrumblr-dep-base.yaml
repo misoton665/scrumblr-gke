@@ -19,13 +19,15 @@ spec:
         name: nginx-node
         ports:
         - containerPort: 80
-      - image: asia.gcr.io/${PROJECT_ID}/scrumblr-redis:v1.5
+      - image: redis:3.2
         name: redis-node
         ports:
         - containerPort: 6379
         volumeMounts:
-        - mountPath: /var/run/redis
+        - mountPath: /data
           name: redis-volume
       volumes:
       - name: redis-volume
-        emptyDir: {}
+        gcePersistentDisk:
+          pdName: scrumblr-disk
+          fsType: ext4
