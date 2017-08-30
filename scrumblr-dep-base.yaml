@@ -11,7 +11,7 @@ spec:
         name: scrumblr-dep
     spec:
       containers:
-      - image: asia.gcr.io/${PROJECT_ID}/scrumblr:v1.10
+      - image: asia.gcr.io/${PROJECT_ID}/scrumblr:v1.11
         name: scrumblr-node
         ports:
         - containerPort: 8080
